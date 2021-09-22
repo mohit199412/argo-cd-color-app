@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: color
-        image: aprabhat/color:blue
+        image: aprabhat/color:green
         ports:
         - containerPort: 3000
