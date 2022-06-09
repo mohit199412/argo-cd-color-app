@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-test-app
+  labels:
+    app: spring-test-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-test-app
+  template:
+    metadata:
+      labels:
+        app: spring-test-app
+    spec:
+      containers:
+      - name: spring-test-app
+        image: aprabhat/color:green
+        ports:
+        - containerPort: 3000
