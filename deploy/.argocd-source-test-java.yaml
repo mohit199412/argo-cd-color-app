@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - docker.io/test12345mohit/test:spring-boot
