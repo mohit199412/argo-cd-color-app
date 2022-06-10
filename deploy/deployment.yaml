@@ -1,21 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-test-app
+  creationTimestamp: null
   labels:
-    app: spring-test-app
+    app: java-api
+  name: java-api
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
-      app: spring-test-app
+      app: java-api
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: spring-test-app
+        app: java-api
     spec:
       containers:
-      - name: spring-test-app
-        image: docker.io/test12345mohit/test:spring-boot
+      - image: docker.io/bbachin1/java-api
+        name: java-api
+        imagePullPolicy: Always
+        resources: {}
         ports:
-        - containerPort: 3000
+          - containerPort: 8080 
+status: {}
