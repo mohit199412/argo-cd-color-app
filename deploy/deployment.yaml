@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-test-app
-        image: docker.io/test12345mohit/test:spring-boot-test
+        image: docker.io/test12345mohit/test:spring-boot
         ports:
         - containerPort: 3000
