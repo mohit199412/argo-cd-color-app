@@ -6,7 +6,7 @@ metadata:
     app: java-api
   name: java-api
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: java-api
@@ -18,9 +18,8 @@ spec:
         app: java-api
     spec:
       containers:
-      - name: spring-boot-app
-        image: docker.io/test12345mohit/test:java-api
-        
+      - image: docker.io/test12345mohit/test
+        name: java-api
         imagePullPolicy: Always
         resources: {}
         ports:
