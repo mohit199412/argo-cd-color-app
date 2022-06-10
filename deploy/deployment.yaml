@@ -18,7 +18,8 @@ spec:
         app: java-api
     spec:
       containers:
-      - image: docker.io/test12345mohit/test:java-api
+      - name: spring-boot-app
+        image: docker.io/test12345mohit/test:java-api
         
         imagePullPolicy: Always
         resources: {}
