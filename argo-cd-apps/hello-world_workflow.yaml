@@ -1,0 +1,32 @@
+# This example demonstrates the use of a git repo as a hard-wired input artifact.
+# The argo repo is cloned to its target destination at '/src' for the main container to consume.
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: input-artifact-git-
+  namespace: argo-events
+spec:
+  entrypoint: git-clone
+  templates:
+    - name: git-clone
+      inputs:
+        artifacts:
+          - name: argo-source
+            path: /src
+            git:
+              repo: https://github.com/mohit199412/java-api-docker.git
+              usernameSecret:
+                name: git-creds
+                key: username
+              passwordSecret:
+                name: git-creds
+                key: password
+      container:
+       image: golang:1.10
+       command: [sh, -c]
+       args: ["
+       git status && ls && git checkout -b release1 && git status &&
+       git remote rm origin &&
+       git remote add origin 'git@github.com:mohit199412/java-api-docker.git' &&
+       git push https://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@github.com/mohit199412/java-api-docker.git "]
+       workingDir: /src
