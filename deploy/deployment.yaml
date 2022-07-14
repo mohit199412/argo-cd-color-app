@@ -18,7 +18,7 @@ spec:
         app: java-api
     spec:
       containers:
-      - image: docker.io/test12345mohit/test:java-api
+      - image: docker.io/test12345mohit/java-api:java-api
         name: java-api
         imagePullPolicy: Always
         resources: {}
