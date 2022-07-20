@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-apps
+  name: sabre-prod
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/mohit199412/argo-cd-color-app.git
     targetRevision: argo-cd-test
-    path: argo-cd-apps/argocd-projects
+    path: applications/sabre/environment/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: sabre-prod
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
