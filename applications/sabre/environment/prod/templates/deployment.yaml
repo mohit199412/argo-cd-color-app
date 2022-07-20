@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: "{{ .Values.hostspacespec.projectName }}"
+  name: "{{ .Values.hostspacespec.projectName }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "{{ .Values.hostspacespec.projectName }}"
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: "{{ .Values.hostspacespec.projectName }}"
+    spec:
+      containers:
+      - image: "{{ .Values.hostspacespec.dockerImageUrl }}"
+        name: "{{ .Values.hostspacespec.dockerImageName }}"
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 8082
+status: {}

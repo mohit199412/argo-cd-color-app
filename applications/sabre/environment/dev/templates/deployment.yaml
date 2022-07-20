@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: java-api-1
-  name: java-api-1
+    app: "{{ .Values.projectName }}"
+  name: "{{ .Values.projectName }}"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: java-api-1
+      app: "{{ .Values.projectName }}"
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: java-api-1
+        app: "{{ .Values.projectName }}"
     spec:
       containers:
-      - image: docker.io/test12345mohit/test:java-api
-        name: java-api-1
+      - image: "{{ .Values.dockerImageUrl }}"
+        name: "{{ .Values.dockerImageName }}"
         imagePullPolicy: Always
         resources: {}
         ports:
