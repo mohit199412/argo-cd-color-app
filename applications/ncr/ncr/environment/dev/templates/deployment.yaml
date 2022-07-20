@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: "{{ .Values.hostspacespec.projectName }}"
-  name: "{{ .Values.hostspacespec.projectName }}"
+    app: "{{ .Values.projectName }}"
+  name: "{{ .Values.projectName }}"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "{{ .Values.hostspacespec.projectName }}"
+      app: "{{ .Values.projectName }}"
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: "{{ .Values.hostspacespec.projectName }}"
+        app: "{{ .Values.projectName }}"
     spec:
       containers:
-      - image: "{{ .Values.hostspacespec.dockerImageUrl }}"
-        name: "{{ .Values.hostspacespec.dockerImageName }}"
+      - image: "{{ .Values.dockerImageUrl }}"
+        name: "{{ .Values.projectName }}"
         imagePullPolicy: Always
         resources: {}
         ports:

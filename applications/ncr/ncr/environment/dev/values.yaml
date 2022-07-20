@@ -4,6 +4,5 @@
 # Default values copied from <project_dir>/helm-charts/book-store/values.yaml
 
 projectName: java-api
-dockerImageUrl: docker.io/test12345mohit/test:java-api
-dockerImageName: java-api
+dockerImageUrl: docker.io/test12345mohit/java-api-build:latest
 portNumber: 8081

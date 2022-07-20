@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: applicationName
+  name: ncr-app
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/mohit199412/argo-cd-color-app.git
     targetRevision: argo-cd-test
-    path: applicationConfigurationPath
+    path: applications/ncr/environment/dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: applicationNamespace
+    namespace: ncr-appspace
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

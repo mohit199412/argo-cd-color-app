@@ -5,5 +5,4 @@
 
 projectName: projectName-value
 dockerImageUrl: dockerImageUrl-value
-dockerImageName: dockerImageName-value
 portNumber: 8081

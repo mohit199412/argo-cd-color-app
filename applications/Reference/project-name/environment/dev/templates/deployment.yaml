@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - image: "{{ .Values.dockerImageUrl }}"
-        name: "{{ .Values.dockerImageName }}"
+        name: "{{ .Values.projectName }}"
         imagePullPolicy: Always
         resources: {}
         ports:

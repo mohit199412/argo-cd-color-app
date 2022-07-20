@@ -5,5 +5,4 @@
 
 projectName: java-api
 dockerImageUrl: docker.io/test12345mohit/test:java-api
-dockerImageName: java-api
 portNumber: 8081
