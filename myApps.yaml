@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/mohit199412/argo-cd-color-app.git
     targetRevision: argo-cd-test
-    path: argo-cd-apps
+    path: argo-cd-apps/sabre
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
