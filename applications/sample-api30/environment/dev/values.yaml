@@ -1,0 +1,8 @@
+# Default values for book-store.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your template
+# Default values copied from <project_dir>/helm-charts/book-store/values.yaml
+
+projectName: java-api
+dockerImageUrl: docker.io/test12345mohit/sample-api30:latest
+portNumber: 8081
